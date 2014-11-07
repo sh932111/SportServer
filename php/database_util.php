@@ -20,8 +20,8 @@ function creatUserTable($link) {
 		`user_id` VARCHAR(20) NOT NULL,
 		`telephone`  VARCHAR(20) NOT NULL,
 		`cellphone`  VARCHAR(20) NOT NULL,
-		`address`  VARCHAR(100) NOT NULL,
-		`gender`  VARCHAR(20) NOT NULL,
+		`address`  VARCHAR(100)CHARACTER SET utf8 COLLATE utf8_unicode_ci   NOT NULL ,
+		`gender`  VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci   NOT NULL,
 		`born_day`  VARCHAR(20) NOT NULL,
 		`send_time`  VARCHAR(100) NOT NULL
 		);";
