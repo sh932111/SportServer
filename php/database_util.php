@@ -20,7 +20,7 @@ function creatUserTable($link) {
 		`user_id` VARCHAR(20) NOT NULL,
 		`telephone`  VARCHAR(20) NOT NULL,
 		`cellphone`  VARCHAR(20) NOT NULL,
-		`address`  VARCHAR(20) NOT NULL,
+		`address`  VARCHAR(100) NOT NULL,
 		`gender`  VARCHAR(20) NOT NULL,
 		`born_day`  VARCHAR(20) NOT NULL,
 		`send_time`  VARCHAR(100) NOT NULL
