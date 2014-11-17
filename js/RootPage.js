@@ -15,12 +15,17 @@ function init() {
 		title : "管理資料",
 		category : "RootUtil"
 	};
+	var LeafletPage = {
+		id : "LeafletPage",
+		title : "文宣資料",
+		category : "RootUtil"
+	};
 	var InformationPage = {
 		id : "InformationPage",
 		title : "管理者資料",
 		category : "RootUtil"
 	};
-	viewData = [ManagementPage,CreatePage,InformationPage];
+	viewData = [ManagementPage,CreatePage,LeafletPage,InformationPage];
 	setUI();
 }
 
