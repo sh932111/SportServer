@@ -1,0 +1,13 @@
+.footerView {
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(top,  from(#005AB5), to(#0080FF)); /* Chrome10+,Safari5.1+*/
+	background: -o-linear-gradient(top,  from(#005AB5), to(#0080FF)); /* Opera 11.10+*/
+	background: -ms-linear-gradient(top, from(#005AB5), to(#0080FF)); /* IE10+ */
+	background: linear-gradient(to bottom,  from(#005AB5), to(#0080FF)); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005AB5'
+		, endColorstr='#005AB5',GradientType=0 ); /* IE6-9 */
+	background:-webkit-gradient(linear, left top, left bottom, from(#005AB5), to(#0080FF));
+	background:-moz-linear-gradient(top, #005AB5, #0080FF);
+	border-radius: 0px 0px 10px 10px;
+}

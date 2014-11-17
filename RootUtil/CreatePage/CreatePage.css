@@ -1,0 +1,89 @@
+#CreatePageScrollView ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.qa_title_on {
+	text-decoration: underline;
+}
+
+.CreatePageBox {
+	width: 100%;
+	height: 100%;
+	display:inline-block;
+}
+#CreatePageScrollView {
+	width: 85%;
+	height: 80%;
+	margin-left: 7.5%;
+	margin-top: 5%;
+	background-color: #e3ffe3;
+	border-radius: 8px;
+	overflow-x: hidden; 
+	overflow-y: auto; 
+	white-space: nowrap;
+}
+#CreatePageAddView {
+	width: 100%;
+	height: 10%;
+}
+#CreatePageAddView img{
+	height: 90%;
+	float: right;
+}
+.CreatePageItem {
+	height: 40px;
+	width: 80%;
+	margin-left: 10%;
+	background-color: #2e8b57;
+	border-radius: 5px 5px 0px 0px;
+	margin-bottom: 0.5%;
+}
+.CreatePageItemTitle {
+	width: 65%;
+	height: 36px;
+	margin-left: 10%;
+	margin-top: 2px;
+	float: left;
+	color: #363636;
+	font-size: 20px;
+	font-family:微軟正黑體;
+}
+.CreatePageItemTitle input{
+	margin-top: 2px;
+	height: 30px;
+}
+.CreatePageItemBt {
+	float: left;
+	margin-top: 2px;
+	height: 36px;
+	width: 36px;
+	margin-left: 2%;
+}
+.CreatePageItemBt img {
+	width: 100%;
+	height: 100%;
+}
+.CreatePageItemframe {
+	display:inline-block;
+	background-color: #ccf5c4;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	width: 80%;
+	height: 200px;
+	border-radius: 0px 0px 5px 5px;
+}
+.CreatePageUploadView {
+	margin-top: 10px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+#CreatePageUpload {
+	margin:0 auto;
+	width: 50px;
+	height: 100%;
+}
+#CreatePageUpload img {
+	height: 100%;
+}

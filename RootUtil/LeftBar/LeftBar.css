@@ -1,0 +1,52 @@
+.LeftBarView {
+	width: 100%;
+	height: 100%;
+	background-color: #add8e6;
+	display:inline-block;
+}
+
+#LeftBarTable {
+	margin-top: 10%;
+	width: 100%;
+	height: 40%;
+    display:table;
+}
+
+.LeftBarTr {
+    display: table-row;
+	width: 100%;
+	height: 10%;
+}
+
+.LeftBarTd {
+    display: table-cell;
+    vertical-align:middle; 
+    text-align:center;
+}
+
+.LeftBarItem {
+	margin-left: 5%;
+	width: 90%;
+	height: 85%;
+	font-size: 18px;
+	font-family:微軟正黑體;
+	color:#ffffff; 
+    text-align:center;
+    background-color: #4169e1;
+	border-radius: 5px;
+	line-height:50px;
+}
+
+.LeftBarItem:hover {
+	margin-left: 5%;
+	width: 90%;
+	height: 85%;
+	font-size: 18px;
+	font-family:微軟正黑體;
+	color:#ffffff; 
+    text-align:center;
+    background-color: #005AB5;
+	cursor: pointer;
+	border-radius: 5px;
+	line-height:50px;
+}
