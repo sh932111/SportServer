@@ -17,6 +17,24 @@ function creatUserTable($link,$table_name) {
 		);";
 	return mysql_query($action, $link);
 }
+function creatNewMsgTable($link,$table_name) {
+	$action  ="CREATE TABLE `$table_name`(
+		`data_id` VARCHAR(20) NOT NULL PRIMARY KEY,
+		`title` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`detail` VARCHAR(200)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`date` VARCHAR(100) NOT NULL,
+		`time` VARCHAR(100) NOT NULL,
+		`address` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
+		`image` INT NOT NULL,
+		`link` INT NOT NULL,
+		`type` INT NOT NULL,
+		`class` INT NOT NULL,
+		`create_time`  VARCHAR(100) NOT NULL
+		);";
+
+	return mysql_query($action, $link);
+}
+
 //活動訊息
 function creatMsgTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(

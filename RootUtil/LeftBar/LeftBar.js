@@ -25,8 +25,8 @@ function addFunction(obj) {
 	obj.addEventListener("click", function(e){
 		var go = this.value+"/"+this.id+"/"+this.id+".html";
 		setPageUtilCallBack('#pgMain',go,function(){
-			if (go == "StudentUtil/LearningPage/LearningPage.html") {
-				LearningPageInit ();
+			if (go == "RootUtil/CreatePage/CreatePage.html") {
+				CreatePageInit();
 			}
 		});
     });

@@ -20,7 +20,7 @@ $email = "qqq";
 if (mysql_select_db('SportData')) {
 	creatUserTable($link,"rootTable");
 	creatMsgTable($link,"msgTable");
-	creatMsgTable($link,"newMsgTable");
+	creatNewMsgTable($link,"newMsgTable");
 	creatBookTable($link,"bookTable");
 	creatLinkTable($link,"linkTable");
 	creatPlanTable($link,"planTable");
