@@ -27,4 +27,5 @@ else {
 	creatRootTable($link);
 }
 
+mysql_close($link);
 ?>

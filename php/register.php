@@ -89,37 +89,5 @@
 	}
 
 	mysql_close($link);
-
-/*	$strSQL = "SELECT * FROM treasure WHERE 1 
-		AND StudentID = '$strStudentID'  
-		AND Password = '$strPassword'  
-		";
-
-	$objQuery = mysql_query($strSQL);
-	$objResult = mysql_fetch_array($objQuery);
-	$intNumRows = mysql_num_rows($objQuery);
-	*/
-
-	/*
-	if($strStudentID == 'user1' && $strPassword == '123456')
-	{
-		$arr["Status"] = "1";
-		$arr["MemberID"] = $strStudentID.".歡迎登入!";
-		$arr["Message"] = "登入成功";
-		
-		echo json_encode($arr);
-		exit();
-	} 
-	else 
-	{
-		$arr["Status"] = "0";
-		$arr["MemberID"] = "0";
-		$arr["Message"] = "帳號或密碼輸入錯誤";
-		
-		echo json_encode($arr);
-		exit();
-	}
-	*/
-	//mysql_close($objConnect);
 	
 ?>
