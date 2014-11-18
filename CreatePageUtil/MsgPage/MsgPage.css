@@ -1,0 +1,54 @@
+.MsgPageInput {
+	margin: 0 auto;
+	width: 55%;
+	height: 25px;
+}
+.MsgPageBt {
+	margin: 0 auto;
+	width: 40%;
+	height: 25px;
+}
+.MsgPageBt input{
+	margin-top: 20%;
+	float: right;
+}
+
+.MsgPageTextarea {
+	margin: 0 auto;
+	width: 55%;
+	margin-bottom: 5px;
+}
+.MsgPageInput input {
+	margin: 0 auto;
+	width: 40%;
+}
+.MsgPageTextarea textarea {
+	width: 75%;
+	height: 120px;
+}
+.MsgAddView {
+	float: left;
+	width: 40px;
+	height: 40px;
+}
+.MsgAddView img{
+	width: 100%;
+	height: 100%;
+}
+.MsgPageView {
+	margin: 0 auto;
+	width: 55%;
+	height: 40px;
+}
+.MsgAddTitle {
+	width:70%;	
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+#MsgImageView {
+	margin-left: 130px;
+}
+#MsgOneInput {
+	margin-top: 15px;
+}

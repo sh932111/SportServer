@@ -5,7 +5,7 @@ function login() {
 		return;
 	}
 	var time = getNowTime();
-	var post_data = "&username="+username+"&password="+password+"&update_time="+time;
+	var post_data = "username="+username+"&password="+password+"&update_time="+time;
 	callApi(post_data,loginApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {

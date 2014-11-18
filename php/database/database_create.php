@@ -24,11 +24,10 @@ function creatNewMsgTable($link,$table_name) {
 		`detail` VARCHAR(200)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
-		`address` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
 		`image` INT NOT NULL,
 		`link` INT NOT NULL,
-		`type` INT NOT NULL,
-		`class` INT NOT NULL,
+		`type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+		`class` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
 
@@ -43,10 +42,9 @@ function creatMsgTable($link,$table_name) {
 		`detail` VARCHAR(200)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
-		`address` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,
 		`image` INT NOT NULL,
 		`link` INT NOT NULL,
-		`type` INT NOT NULL,
+		`type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
 
@@ -60,7 +58,7 @@ function creatBookTable($link,$table_name) {
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
 		`link` INT NOT NULL,
-		`type` INT NOT NULL,
+		`type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
 
@@ -71,9 +69,7 @@ function creatLinkTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`data_id` VARCHAR(20) NOT NULL PRIMARY KEY,
 		`title` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`date` VARCHAR(100) NOT NULL,
-		`time` VARCHAR(100) NOT NULL,
-		`link` INT NOT NULL,
+		`link` VARCHAR(100) NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
 
@@ -84,7 +80,7 @@ function creatPlanTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`data_id` VARCHAR(20) NOT NULL PRIMARY KEY,
 		`title` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`list` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`detail` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
 		`link` INT NOT NULL,

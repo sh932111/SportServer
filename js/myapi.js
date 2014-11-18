@@ -1,4 +1,8 @@
 var loginApi = "php/member/login.php";
+var addNewMsgApi = "php/createPage/add_new_msg.php";
+var addPlanApi = "php/createPage/add_plan.php";
+var addBookApi = "php/createPage/add_book.php";
+var addLinkApi = "php/createPage/add_link.php";
 
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();
@@ -42,6 +46,14 @@ function getNowTime() {
 	var send_time = year +"/"+ month +"/"+ day + " " + dt.getHours()+":"+ dt.getMinutes()+":"+ dt.getSeconds();
 	return send_time;
 }
+function getPostId() {
+    var dt = new Date();
+    var month = dt.getMonth()+1;
+    var day = dt.getDate();
+    var year = dt.getFullYear();
+    var send_time = year +""+ month +""+ day + "" + dt.getHours()+""+ dt.getMinutes()+""+ dt.getSeconds();
+    return send_time;
+}
 
 //檢查是否空值
 function checkIng(text,key) {
@@ -60,4 +72,26 @@ function setPageUtilCallBack(page_id, page_link,callback) {
     $(page_id).load(page_link, function() {
         callback();
     });
+}
+
+function formUpload(form) {
+    $(form).ajaxSubmit({
+        beforeSubmit: function(){
+        },
+        success: function(resp,st,xhr,$form) {
+            if(resp != "err") {
+            }
+            else {
+            }
+        }
+    });
+}
+
+function addInputInformation(name,value) {
+    var input = document.createElement("input");
+    input.name=name;
+    input.type="text";
+    input.value=value;
+    input.style.display="none";
+    return input;
 }

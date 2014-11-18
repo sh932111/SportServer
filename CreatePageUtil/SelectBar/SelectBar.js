@@ -38,6 +38,27 @@ function refreshSelectBarItems(index) {
 }
 
 function refreshCreateView() {
-	console.log(SelectBarViewBoxTitle.value);
-	console.log(SelectBarViewBoxClass.value);
+
+	$("#CreatePageBoxScrollView").empty();
+
+	if (SelectBarViewBoxTitle.value == "最新消息") {
+	    setPageUtilCallBack('#CreatePageBoxScrollView','CreatePageUtil/MsgPage/MsgPage.html', function() {
+	    	MsgInit(SelectBarViewBoxClass.value);
+	    });
+	}
+	else if (SelectBarViewBoxTitle.value == "學會簡介") {
+	    setPageUtilCallBack('#CreatePageBoxScrollView','CreatePageUtil/PlanPage/PlanPage.html', function() {
+	    	PlanPageInit();
+	    });
+	}
+	else if (SelectBarViewBoxTitle.value == "出版資訊") {
+	    setPageUtilCallBack('#CreatePageBoxScrollView','CreatePageUtil/BookPage/BookPage.html', function() {
+	    	BookPageInit();
+	    });
+	}
+	else if (SelectBarViewBoxTitle.value == "相關連結") {
+	    setPageUtilCallBack('#CreatePageBoxScrollView','CreatePageUtil/LinkPage/LinkPage.html', function() {
+	   
+	    });
+	}
 }
