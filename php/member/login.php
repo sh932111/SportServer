@@ -29,11 +29,11 @@ else {
 }
 
 function loginStatus($row,$table_name,$username,$update_time,$link) {
-	$result = false;
-	$message = "登入失敗！";
-	if (!$row) {
-		$result = true;
-	}
+	// $result = false;
+	// $message = "登入失敗！";
+	// if (!$row) {
+	// 	$result = true;
+	// }
 	$data = array();
 	if ($result) {
 		$message = "登入成功！";
@@ -45,8 +45,8 @@ function loginStatus($row,$table_name,$username,$update_time,$link) {
 		$data["create_time"] = $row["create_time"];
 		$data["update_time"] = $row["update_time"];
 	}
-	$data["message"] = $message;
-	$data["result"] = $result;
+	$data["message"] = $row;
+	$data["result"] = $row;
 	$res["data"] = $data;
 	echo json_encode($res);
 	mysql_close($link);
