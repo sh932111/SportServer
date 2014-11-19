@@ -87,7 +87,19 @@ function formUpload(form) {
         }
     });
 }
-
+function formUploadCallBack(form,callback) {
+    $(form).ajaxSubmit({
+        beforeSubmit: function(){
+        },
+        success: function(resp,st,xhr,$form) {
+            if(resp != "err") {
+            }
+            else {
+            }
+            callback();
+        }
+    });
+}
 function addInputInformation(name,value) {
     var input = document.createElement("input");
     input.name=name;

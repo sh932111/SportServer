@@ -4,7 +4,7 @@ var userRecordData;
 function init() {
 	var data = window.sessionStorage.getItem("SportData");
 	userRecordData = JSON.parse(data);
-	console.log(userRecordData);
+	
 	var CreatePage = {
 		id : "CreatePage",
 		title : "新增資料",

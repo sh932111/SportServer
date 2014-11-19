@@ -29,6 +29,7 @@ if (mysql_select_db('SportData')) {
 	mkdir("../data/Plan");
 	mkdir("../data/Book");
 	mkdir("../data/Msg");
+	mkdir("../data/Leaflet");
 }
 
 ?>
