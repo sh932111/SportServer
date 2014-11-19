@@ -13,6 +13,7 @@ function callApi(post_data,api,callback) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) 
         {
             var return_data = xmlhttp.responseText;
+            console.log(return_data);
             var get_json = JSON.parse(return_data);
             var user_data = get_json.data;
             callback(user_data);
