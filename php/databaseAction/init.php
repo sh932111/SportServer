@@ -25,7 +25,10 @@ if (mysql_select_db('SportData')) {
 	creatLinkTable($link,"linkTable");
 	creatPlanTable($link,"planTable");
 	registerUser($link,"rootTable",$name,$username,$password,$cellphone,$email,$datetime,$datetime);
-	mkdir("../data/");
+	//mkdir("../data/");
+	if(!mkdir("../data/")) {
+   		print_r(error_get_last());
+	}
 	mkdir("../data/Plan");
 	mkdir("../data/Book");
 	mkdir("../data/Msg");
