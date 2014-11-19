@@ -31,7 +31,7 @@ else {
 function loginStatus($row,$table_name,$username,$update_time,$link) {
 	$result = false;
 	$message = "登入失敗！";
-	if (!empty($row)) {
+	if (!$row) {
 		$result = true;
 	}
 	$data = array();
