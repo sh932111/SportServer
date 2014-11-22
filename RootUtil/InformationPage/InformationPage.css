@@ -1,0 +1,18 @@
+.InformationPageBox {
+	margin: 5%;
+	width: 90%;
+	height: 80%;
+}
+.InformationPageBoxInput {
+	width: 40%;
+	margin: 0 auto;
+	margin-top: 5px;
+}
+.InformationPageBoxInput input{
+	width: 60%;
+	height: 25px;
+}
+.InformationPageBoxInput2 input {
+	width: 60px;
+	height: 30px;
+}

@@ -41,6 +41,7 @@ function loginStatus($row,$table_name,$username,$update_time,$link) {
 		updateLoginTime($link,$table_name,$username,$update_time,$link);
 		$data["name"] = $row["name"];
 		$data["username"] = $row["username"];
+		$data["password"] = $row["password"];
 		$data["cellphone"] = $row["cellphone"];
 		$data["email"] = $row["email"];
 		$data["create_time"] = $row["create_time"];

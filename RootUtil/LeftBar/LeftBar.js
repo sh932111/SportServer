@@ -28,6 +28,9 @@ function addFunction(obj) {
 			if (go == "RootUtil/CreatePage/CreatePage.html") {
 				CreatePageInit();
 			}
+			if (go == "RootUtil/InformationPage/InformationPage.html") {
+				InformationPageInit();
+			}
 		});
     });
 }

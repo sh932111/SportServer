@@ -3,6 +3,7 @@ var addNewMsgApi = "php/createPage/add_new_msg.php";
 var addPlanApi = "php/createPage/add_plan.php";
 var addBookApi = "php/createPage/add_book.php";
 var addLinkApi = "php/createPage/add_link.php";
+var updateUserDataApi = "php/member/update_user.php";
 
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();
@@ -13,7 +14,6 @@ function callApi(post_data,api,callback) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) 
         {
             var return_data = xmlhttp.responseText;
-            console.log(return_data);
             var get_json = JSON.parse(return_data);
             var user_data = get_json.data;
             callback(user_data);
