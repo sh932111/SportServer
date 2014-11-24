@@ -144,12 +144,14 @@ function refreshCreateView() {
 
 function setIndxeBox(obj) {
 	refreshSelectBarPost(refreshSelectBarPostIndex);
-	selectBarCallApi();
+	refreshCreateView();
+	//selectBarCallApi();
 }
 
 function setIndxeYearBox(obj) {
 	refreshSelectBarPost(refreshSelectBarPostIndex);
-	selectBarCallApi();
+	refreshCreateView();
+	//selectBarCallApi();
 }
 
 function refreshSelectBarPost(index) {

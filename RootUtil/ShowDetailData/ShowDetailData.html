@@ -6,25 +6,25 @@
 </div>
 <div class="ShowDetailDataBox">
 	<div class="ShowDetailDataBoxDetail">
-		<div id="ShowDetailDataTitle" class="ShowDetailInputBox">標題：
-			<input type="text" size="50" class="ShowDetailInput" />
+		<div class="ShowDetailInputBox">標題：
+			<input type="text" size="50" class="ShowDetailInput" id="ShowDetailDataTitle" />
 		</div>
-		<div id="ShowDetailDataDetail">
+		<div>
 			內文：<br>
-			<textarea type="text" size="999" class="ShowDetailTextarea"></textarea>
+			<textarea type="text" size="999" class="ShowDetailTextarea" id="ShowDetailDataDetail"></textarea>
 		</div>
-		<div id="ShowDetailDataDate" class="ShowDetailInputBox">
-			日期：<input type="date" size="20" class="ShowDetailInput" />
+		<div class="ShowDetailInputBox">
+			日期：<input type="date" size="20" class="ShowDetailInput" id="ShowDetailDataDate"/>
 		</div>
-		<div id="ShowDetailDataTime" class="ShowDetailInputBox">
-			時間：<input type="time" size="20" class="ShowDetailInput" />
+		<div class="ShowDetailInputBox">
+			時間：<input type="time" size="20" class="ShowDetailInput" id="ShowDetailDataTime" />
 		</div>
-		<div id="ShowDetailImg" >
+		<div>
 			<div>
 				文宣圖檔(240*240佳)：
 			</div>
 			<div>
-				<img src="" class="ShowDetailShowImg">
+				<img src="" class="ShowDetailShowImg" id="ShowDetailImg" >
 			</div>
 			更改：
 			<form action="php/upload_msg_img.php" method="post" id="ajaxForm">
@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div id="MsgLinkView"></div>
-
+		<div id="ShowDeatilLinkView"></div>
 		<br>
 		<div class="ShowDetailInputBox">
 			<input type="button" value="修改檔案" class="frameBt"/>

@@ -1,6 +1,6 @@
 var MsgImageView = document.getElementById('MsgImageView');
 var MsgLinkView = document.getElementById('MsgLinkView');
-var get_post ;
+var getPost ;
 function MsgInit(index) {
 	if (index != "學會活動") {
 		var MsgPageInputSelect = document.getElementById('MsgPageInputSelect');
@@ -10,7 +10,7 @@ function MsgInit(index) {
 	var MsgPageInputSelectSpinner = new getSpinner();
 	var MsgPageInputSelect = document.getElementById('MsgPageInputSelect');
 	MsgPageInputSelectSpinner.loadSpinner(MsgPageInputSelect,EventClass,EventClass);
-	get_post = getPostId();
+	getPost = getPostId();
 
 	MsgSetUI();
 }
@@ -28,7 +28,7 @@ function MsgSetUI() {
 		input.type = "file";
 		input.name = "img";
 		var foldername_input = addInputInformation("folderName","Msg");
-		var id_input = addInputInformation("folderId",get_post);
+		var id_input = addInputInformation("folderId",getPost);
 		form.appendChild(id_input);
 		form.appendChild(input);
 		form.appendChild(foldername_input);
@@ -55,7 +55,7 @@ function MsgSetUI() {
 		input.type = "file";
 		input.name = "file";
 		var foldername_input = addInputInformation("folderName","Msg");
-		var id_input = addInputInformation("folderId",get_post);
+		var id_input = addInputInformation("folderId",getPost);
 		form.appendChild(input);
 		form.appendChild(foldername_input);
 		form.appendChild(id_input);
@@ -90,7 +90,7 @@ function MsgPost() {
 	if (SelectBarViewBoxClass.value != "學會活動") {
 		m_class = "";
 	}
-	var post_data = "data_id="+get_post+"&title="+title+"&detail="+detail+"&date="+date
+	var post_data = "data_id="+getPost+"&title="+title+"&detail="+detail+"&date="+date
 	+"&time="+time+"&image="+image+"&link="+link+"&type="+SelectBarViewBoxClass.value+"&class="+m_class+"&create_time="+create_time;
 
 	callApi(post_data,addNewMsgApi,function(user_data){
@@ -110,7 +110,7 @@ function MsgPost() {
 			var folderName = document.getElementById('folderName');
 			folderName.value = "Msg";
 			var folderId = document.getElementById('folderId');
-			folderId.value = get_post;
+			folderId.value = getPost;
 			formUpload(document.getElementById('ajaxForm'));
 			window.location.reload();
 		}

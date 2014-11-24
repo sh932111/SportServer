@@ -1,5 +1,5 @@
 //8個資料一組
-
+var selectedIndex = 0;
 function listViewInit(res_title_items,res_date_items){
 	var title_items = [];
 	var date_items = [];
@@ -54,8 +54,9 @@ function setListView(title_items,date_items){
 		}
 		box_div.addEventListener("click", function(e){
 			var index = this.id;
+			var get_index = parseInt(index) + parseInt(selectedIndex*8);
 			setPageUtilCallBack('#ManagementPageScrollView','RootUtil/ShowDetailData/ShowDetailData.html', function() {
-				ShowDetailDataInit();
+				ShowDetailDataInit(get_index);
 		    });
 		});
 		box_div.appendChild(title_div);
@@ -65,6 +66,7 @@ function setListView(title_items,date_items){
 }
 
 function setListLink(data_num,selected_index,title_items,date_items){
+	selectedIndex = selected_index;
 	var ListViewIndex = document.getElementById('ListViewIndex');
 	$("#ListViewIndex").empty();
 	var box = document.createElement("div");

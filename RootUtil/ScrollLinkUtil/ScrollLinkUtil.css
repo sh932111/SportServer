@@ -1,0 +1,16 @@
+.ScrollLinkUtilViewBox {
+	height: 20px;
+}
+.ScrollLinkUtilViewBt {
+	height:100%;
+}
+.ScrollLinkUtilViewText {
+	height:100%;
+	font-size: 16px;
+	float: left;
+	line-height: 16px;
+}
+.ScrollLinkBt {
+	height:100%;
+	float: left;
+}

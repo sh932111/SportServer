@@ -11,6 +11,7 @@ var getMsgApi = "php/managementPage/get_msg.php";
 var getNewMsgApi = "php/managementPage/get_new_msg.php";
 var getPlanApi = "php/managementPage/get_plan.php";
 
+var getDataPath = "php/get_data_path.php";
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", api, true);
