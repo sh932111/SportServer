@@ -28,7 +28,10 @@ function addFunction(obj) {
 			if (go == "RootUtil/CreatePage/CreatePage.html") {
 				CreatePageInit();
 			}
-			if (go == "RootUtil/InformationPage/InformationPage.html") {
+			else if (go == "RootUtil/ManagementPage/ManagementPage.html") {
+				ManagementPageInit();
+			}
+			else if (go == "RootUtil/InformationPage/InformationPage.html") {
 				InformationPageInit();
 			}
 		});

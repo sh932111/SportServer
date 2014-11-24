@@ -1,0 +1,26 @@
+#ScrollImgUtilView {
+	height: 200px;
+	width: 100%;
+	overflow-x: auto; 
+	overflow-y: hidden; 
+	white-space: nowrap;
+}
+.ScrollImgImg {
+	height: 180px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.ScrollImgBt {
+	height: 20px;
+	width: 20px;
+	position: relative;
+	top: -190px;	
+}
+.ScrollImgBtImg {
+	height: 100%;
+	width: 100%;
+}
+.ScrollImgUtilViewBox {
+	display:inline-block;
+	margin-left: 10px;
+}

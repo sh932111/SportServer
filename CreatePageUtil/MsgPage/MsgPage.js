@@ -6,10 +6,17 @@ function MsgInit(index) {
 		var MsgPageInputSelect = document.getElementById('MsgPageInputSelect');
 		MsgPageInputSelect.style.display = "none";
 	}
-	get_post = getPostId();
+	
 	var MsgPageInputSelectSpinner = new getSpinner();
 	var MsgPageInputSelect = document.getElementById('MsgPageInputSelect');
 	MsgPageInputSelectSpinner.loadSpinner(MsgPageInputSelect,EventClass,EventClass);
+	get_post = getPostId();
+
+	MsgSetUI();
+}
+
+function MsgSetUI() {
+	
 	var MsgAddImgTitle = document.getElementById('MsgAddImgTitle');
 	MsgAddImgTitle.addEventListener("click", function(e){
 		var box_div = document.createElement("div");
@@ -63,7 +70,6 @@ function MsgInit(index) {
 			MsgLinkView.removeChild(div_array[div_array.length - 1]);
 		}
 	});
-	
 }
 
 function MsgPost() {

@@ -1,0 +1,69 @@
+<div>
+	<script type='text/javascript' src='RootUtil/ShowDetailData/ShowDetailData.js'></script>
+	<script type='text/javascript' src='CreatePageUtil/MsgPage/MsgPage.js'></script>
+	<link rel='stylesheet' href='RootUtil/ShowDetailData/ShowDetailData.css'>
+	<link rel='stylesheet' href='CreatePageUtil/MsgPage/MsgPage.css'>
+</div>
+<div class="ShowDetailDataBox">
+	<div class="ShowDetailDataBoxDetail">
+		<div id="ShowDetailDataTitle" class="ShowDetailInputBox">標題：
+			<input type="text" size="50" class="ShowDetailInput" />
+		</div>
+		<div id="ShowDetailDataDetail">
+			內文：<br>
+			<textarea type="text" size="999" class="ShowDetailTextarea"></textarea>
+		</div>
+		<div id="ShowDetailDataDate" class="ShowDetailInputBox">
+			日期：<input type="date" size="20" class="ShowDetailInput" />
+		</div>
+		<div id="ShowDetailDataTime" class="ShowDetailInputBox">
+			時間：<input type="time" size="20" class="ShowDetailInput" />
+		</div>
+		<div id="ShowDetailImg" >
+			<div>
+				文宣圖檔(240*240佳)：
+			</div>
+			<div>
+				<img src="" class="ShowDetailShowImg">
+			</div>
+			更改：
+			<form action="php/upload_msg_img.php" method="post" id="ajaxForm">
+				<input type="file" id="MsgOneInput" name="img"><br>
+				<input name="folderName" id="folderName" type="text" value="" style = "display:none">
+				<input name="folderId" id="folderId" type="text" value="" style = "display:none">
+			</form>
+		</div>
+
+		<div class="MsgPageView2">
+			<div class="MsgAddTitle">
+				圖片：
+			</div>
+			<div class="MsgAddView" id="MsgAddImgTitle">
+				<img src="img/addBt.png">
+			</div>
+			<div class="MsgAddView" id="MsgDeleteImgTitle">
+				<img src="img/deleteBt.png">
+			</div>
+		</div>
+		<div id="MsgImageView"></div>
+		<div id="ShowDeatilImageView"></div>
+		<div class="MsgPageView2">
+			<div class="MsgAddTitle">
+				附檔：
+			</div>
+			<div class="MsgAddView" id="MsgAddFileTitle">
+				<img src="img/addBt.png">
+			</div>
+			<div class="MsgAddView" id="MsgDeleteFileTitle">
+				<img src="img/deleteBt.png">
+			</div>
+		</div>
+		<div id="MsgLinkView"></div>
+
+		<br>
+		<div class="ShowDetailInputBox">
+			<input type="button" value="修改檔案" class="frameBt"/>
+			<input type="button" value="刪除檔案" class="frameBt"/>
+		</div>
+	</div>
+</div>

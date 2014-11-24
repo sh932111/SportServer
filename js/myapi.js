@@ -5,6 +5,12 @@ var addBookApi = "php/createPage/add_book.php";
 var addLinkApi = "php/createPage/add_link.php";
 var updateUserDataApi = "php/member/update_user.php";
 
+var getBookApi = "php/managementPage/get_book.php";
+var getLinkApi = "php/managementPage/get_link.php";
+var getMsgApi = "php/managementPage/get_msg.php";
+var getNewMsgApi = "php/managementPage/get_new_msg.php";
+var getPlanApi = "php/managementPage/get_plan.php";
+
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", api, true);
@@ -108,3 +114,12 @@ function addInputInformation(name,value) {
     input.style.display="none";
     return input;
 }
+function getNowMonth() {
+    var dt = new Date();
+    return dt.getMonth();
+}
+function getNowYear() {
+    var dt = new Date();
+    return dt.getFullYear();
+}
+

@@ -1,5 +1,6 @@
 var viewData = [];
 var userRecordData;
+var getApiData;
 
 function init() {
 	var data = window.sessionStorage.getItem("SportData");
@@ -31,7 +32,9 @@ function init() {
 
 function setUI() {
 	setPageUtil('#pgHeader','PageUtil/Header/Header.html');
-	setPageUtil('#pgMain','RootUtil/ManagementPage/ManagementPage.html');
+	setPageUtilCallBack('#pgMain','RootUtil/ManagementPage/ManagementPage.html', function() {
+		ManagementPageInit();
+	});
 	setPageUtilCallBack('#pgLeft','RootUtil/LeftBar/LeftBar.html', function() {
     	leftBarInit(viewData);
 	});

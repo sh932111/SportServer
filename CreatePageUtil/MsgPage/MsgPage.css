@@ -9,7 +9,7 @@
 	height: 25px;
 }
 .MsgPageBt input{
-	margin-top: 20%;
+	margin-top: 10%;
 	float: right;
 }
 
@@ -40,13 +40,17 @@
 	width: 55%;
 	height: 40px;
 }
+.MsgPageView2 {
+	width: 70%;
+	height: 40px;
+}
 .MsgAddTitle {
 	width:70%;	
 	height: 40px;
 	line-height: 40px;
 	float: left;
 }
-#MsgImageView {
+.MsgImageView2{
 	margin-left: 130px;
 }
 #MsgOneInput {
