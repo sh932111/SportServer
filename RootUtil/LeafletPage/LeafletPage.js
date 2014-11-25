@@ -9,8 +9,11 @@ function LeafletInit() {
 	var LeafletImg = document.getElementById('LeafletImg');
 	
 	callApi("",getLeafletPath,function(res){
-			console.log(res);
-		if (res.result) {
+		if (res.img_path.length > 0) {
+			LeafletImg.src = "php/"+res.img_path[0];
+		}
+		else {
+			LeafletImg.src = "img/noneImg.jpg";
 		}
 	});
 }
