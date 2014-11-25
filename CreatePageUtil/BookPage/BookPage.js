@@ -68,9 +68,12 @@ function MsgPost() {
 				if (extend == "") {
 					MsgPostNum = MsgPostNum - 1;
 				}
-				formUploadCallBack(form,function(){
-					uploadFinishReload();
-				});
+				else {
+					formUploadCallBack(form,function(){
+						uploadFinishReload();
+					});
+				}
+				
 			}
 			
 			if (MsgPostNum == 0) {
