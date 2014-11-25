@@ -9,8 +9,8 @@ function LeafletInit() {
 	var LeafletImg = document.getElementById('LeafletImg');
 	
 	callApi("",getLeafletPath,function(res){
-		if (res.result) {
 			console.log(res);
+		if (res.result) {
 		}
 	});
 }
