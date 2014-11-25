@@ -59,9 +59,6 @@ function MsgPost() {
 				if (extend == "") {
 					MsgPostNum = MsgPostNum - 1;
 				}
-				else {
-					MsgResponseNum ++;
-				}
 				formUploadCallBack(form,function(){
 					uploadFinishReload();
 				});

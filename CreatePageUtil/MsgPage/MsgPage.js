@@ -117,9 +117,6 @@ function MsgPost() {
 				if (extend == "") {
 					MsgPostNum = MsgPostNum - 1;
 				}
-				else {
-					MsgResponseNum ++;
-				}
 				formUploadCallBack(form,function(){
 					uploadFinishReload();
 				});
@@ -131,9 +128,6 @@ function MsgPost() {
 				var extend = filename.substring(filename.lastIndexOf(".") + 1);
 				if (extend == "") {
 					MsgPostNum = MsgPostNum - 1;
-				}
-				else {
-					MsgResponseNum ++;
 				}
 				formUploadCallBack(form,function(){
 					uploadFinishReload();
@@ -150,9 +144,6 @@ function MsgPost() {
 			var extend = filename.substring(filename.lastIndexOf(".") + 1);
 			if (extend == "") {
 				MsgPostNum = MsgPostNum - 1;
-			}
-			else {
-				MsgResponseNum ++;
 			}
 			formUploadCallBack(document.getElementById('ajaxForm'),function(){
 				uploadFinishReload();
