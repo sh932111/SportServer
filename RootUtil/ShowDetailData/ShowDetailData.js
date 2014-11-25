@@ -160,9 +160,29 @@ function updateShowDetailDataMsg() {
 				
 				if (ShowDetailImgView.style.display == "none") {
 					MsgPostNum  = MsgPostNum -1;
-					if (MsgPostNum == 0) {
-						window.location.reload();
+				}
+
+				var folderName = document.getElementById('folderName');
+				folderName.value = post_folder;
+				var folderId = document.getElementById('folderId');
+				folderId.value = getPost;
+
+				if (ShowDetailImgView.style.display != "none") {
+					var get_input = document.getElementById('ajaxForm').getElementsByTagName('input')[0];
+					var filename = get_input.value;
+					var extend = filename.substring(filename.lastIndexOf(".") + 1);
+					if (extend == "") {
+						MsgPostNum = MsgPostNum - 1;
 					}
+					else {
+						formUploadCallBack(document.getElementById('ajaxForm'),function(){
+							uploadFinishReload();
+						});
+					}
+				}
+
+				if (MsgPostNum == 0) {
+					window.location.reload();
 				}
 
 				for (var i = 0; i < img_array.length; i++) {
@@ -196,24 +216,6 @@ function updateShowDetailDataMsg() {
 					}
 				}
 
-				var folderName = document.getElementById('folderName');
-				folderName.value = post_folder;
-				var folderId = document.getElementById('folderId');
-				folderId.value = getPost;
-
-				if (ShowDetailImgView.style.display != "none") {
-					var get_input = document.getElementById('ajaxForm').getElementsByTagName('input')[0];
-					var filename = get_input.value;
-					var extend = filename.substring(filename.lastIndexOf(".") + 1);
-					if (extend == "") {
-						MsgPostNum = MsgPostNum - 1;
-					}
-					else {
-						formUploadCallBack(document.getElementById('ajaxForm'),function(){
-							uploadFinishReload();
-						});
-					}
-				}
 			}
 		});
 	}
