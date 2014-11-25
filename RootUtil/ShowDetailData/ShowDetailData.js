@@ -160,7 +160,11 @@ function updateShowDetailDataMsg() {
 				
 				if (ShowDetailImgView.style.display == "none") {
 					MsgPostNum  = MsgPostNum -1;
+					if (MsgPostNum == 0) {
+						window.location.reload();
+					}
 				}
+
 				for (var i = 0; i < img_array.length; i++) {
 					var form = img_array[i];
 					var get_input = form.getElementsByTagName('input')[1];
@@ -171,11 +175,10 @@ function updateShowDetailDataMsg() {
 					}
 
 					else {
-						MsgResponseNum ++;
+						formUploadCallBack(form,function(){
+							uploadFinishReload();
+						});
 					}
-					formUploadCallBack(form,function(){
-						uploadFinishReload();
-					});
 				}
 				for (var i = 0; i < link_array.length; i++) {
 					var form = link_array[i];
@@ -187,11 +190,10 @@ function updateShowDetailDataMsg() {
 					}
 					
 					else {
-						MsgResponseNum ++;
+						formUploadCallBack(form,function(){
+							uploadFinishReload();
+						});
 					}
-					formUploadCallBack(form,function(){
-						uploadFinishReload();
-					});
 				}
 
 				var folderName = document.getElementById('folderName');
@@ -207,15 +209,10 @@ function updateShowDetailDataMsg() {
 						MsgPostNum = MsgPostNum - 1;
 					}
 					else {
-						MsgResponseNum ++;
+						formUploadCallBack(document.getElementById('ajaxForm'),function(){
+							uploadFinishReload();
+						});
 					}
-					
-					formUploadCallBack(document.getElementById('ajaxForm'),function(){
-						uploadFinishReload();
-					});
-				}
-				else {
-					uploadFinishReload();
 				}
 			}
 		});
