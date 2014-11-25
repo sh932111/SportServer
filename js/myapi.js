@@ -12,6 +12,10 @@ var getNewMsgApi = "php/managementPage/get_new_msg.php";
 var getPlanApi = "php/managementPage/get_plan.php";
 
 var getDataPath = "php/get_data_path.php";
+var deleteAllMsg = "php/managementPage/delete_all_msg.php";
+var deleteLink = "php/managementPage/delete_link.php";
+var updateAllMsg = "php/managementPage/update_all_msg.php";
+
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", api, true);
@@ -99,6 +103,7 @@ function formUploadCallBack(form,callback) {
         beforeSubmit: function(){
         },
         success: function(resp,st,xhr,$form) {
+            console.log(xhr);
             if(resp != "err") {
             }
             else {
@@ -122,5 +127,11 @@ function getNowMonth() {
 function getNowYear() {
     var dt = new Date();
     return dt.getFullYear();
+}
+function checkToUserData() {
+    if (!userRecordData) {
+        alert("使用者已登出！請重新登入");
+        location.href = 'index.html';
+    }
 }
 

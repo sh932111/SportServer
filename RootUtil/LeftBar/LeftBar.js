@@ -23,6 +23,7 @@ function leftBarInit(view_data) {
 
 function addFunction(obj) {
 	obj.addEventListener("click", function(e){
+		checkToUserData();
 		var go = this.value+"/"+this.id+"/"+this.id+".html";
 		setPageUtilCallBack('#pgMain',go,function(){
 			if (go == "RootUtil/CreatePage/CreatePage.html") {

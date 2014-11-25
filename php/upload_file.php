@@ -3,14 +3,18 @@
 $mypath = $_POST["folderName"];
 $folderId = $_POST["folderId"];
 
-$target_path  = "./data/".$mypath."/".$folderId."/";//接收文件目录  
+$first_path = "./data/".$mypath;
+mkdir($first_path);
+
+$target_path  = $first_path."/".$folderId."/";//接收文件目录  
 mkdir($target_path);
+
 $target_path2  = $target_path."file"."/";//接收文件目录  
 mkdir($target_path2);
 
-$target_path2 = $target_path2 . basename( $_FILES['file']['name']);  
+$target_path3 = $target_path2 . basename( $_FILES['file']['name']);  
 
-if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path2)) {  
+if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path3)) {  
     echo "The file ".  basename( $_FILES['file']['name']). " has been uploaded";  
 }
 else {          

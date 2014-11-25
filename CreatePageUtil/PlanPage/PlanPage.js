@@ -1,5 +1,7 @@
 var MsgLinkView = document.getElementById('MsgLinkView');
 var get_post ;
+var MsgPostNum = 0;
+var MsgResponseNum = 0;
 
 function PlanPageInit() {
 	get_post = getPostId();
@@ -48,12 +50,32 @@ function MsgPost() {
 		alert(user_data.message);
 		if (user_data.result) {
 			var link_array = MsgLinkView.getElementsByTagName('form');
+			MsgPostNum = link_array.length;
 			for (var i = 0; i < link_array.length; i++) {
 				var form = link_array[i];
-				formUpload(form);
+				var get_input = form.getElementsByTagName('input')[1];
+				var filename = get_input.value;
+				var extend = filename.substring(filename.lastIndexOf(".") + 1);
+				if (extend == "") {
+					MsgPostNum = MsgPostNum - 1;
+				}
+				else {
+					MsgResponseNum ++;
+				}
+				formUploadCallBack(form,function(){
+					uploadFinishReload();
+				});
 			}
-			window.location.reload();
+			if (MsgPostNum == 0) {
+				window.location.reload();
+			}
 		}
 	});
+}
+
+function uploadFinishReload(){
+	if (MsgResponseNum == MsgPostNum) {
+		window.location.reload();
+	}
 }
 

@@ -78,7 +78,7 @@ function refreshSelectBarItems(index) {
 }
 
 function refreshCreateView() {
-
+	checkToUserData();
 	$("#CreatePageBoxScrollView").empty();
 	SelectBarTime.style.display = "";
 	if (SelectBarViewBoxTitle.value == "最新消息") {
@@ -93,6 +93,8 @@ function refreshCreateView() {
 		else {
 			setPageUtil('#ManagementPageScrollView','RootUtil/ListView/ListView.html');
 		}
+		refreshSelectBarPost(refreshSelectBarPostIndex);
+		selectBarCallApi();
 	}
 	else if (SelectBarViewBoxTitle.value == "學會簡介") {
 		SelectBarCallApi = getPlanApi;
@@ -106,6 +108,8 @@ function refreshCreateView() {
 		else {
 			setPageUtil('#ManagementPageScrollView','RootUtil/ListView/ListView.html');
 		}
+		refreshSelectBarPost(refreshSelectBarPostIndex);
+		selectBarCallApi();
 	}
 	else if (SelectBarViewBoxTitle.value == "出版資訊") {
 		SelectBarCallApi = getBookApi;
@@ -119,6 +123,8 @@ function refreshCreateView() {
 		else {
 			setPageUtil('#ManagementPageScrollView','RootUtil/ListView/ListView.html');
 		}
+		refreshSelectBarPost(refreshSelectBarPostIndex);
+		selectBarCallApi();
 	}
 	else if (SelectBarViewBoxTitle.value == "相關連結") {
 		SelectBarTime.style.display = "none";
@@ -130,16 +136,18 @@ function refreshCreateView() {
 		    });
 		}
 		else {
-			setPageUtil('#ManagementPageScrollView','RootUtil/ListView/ListView.html');
+			setPageUtilCallBack('#ManagementPageScrollView','RootUtil/SelectLink/SelectLink.html', function() {
+		   		SelectLinkInit();
+		    });
 		}
 	}
 	else if (SelectBarViewBoxTitle.value == "活動訊息") {
 		SelectBarCallApi = getMsgApi;
 		refreshSelectBarPostIndex = 1;
 		setPageUtil('#ManagementPageScrollView','RootUtil/ListView/ListView.html');
+		refreshSelectBarPost(refreshSelectBarPostIndex);
+		selectBarCallApi();
 	}
-	refreshSelectBarPost(refreshSelectBarPostIndex);
-	selectBarCallApi();
 }
 
 function setIndxeBox(obj) {

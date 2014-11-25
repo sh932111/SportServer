@@ -9,7 +9,7 @@
 		<div class="ShowDetailInputBox">標題：
 			<input type="text" size="50" class="ShowDetailInput" id="ShowDetailDataTitle" />
 		</div>
-		<div>
+		<div id="ShowDetailDataDetailBox">
 			內文：<br>
 			<textarea type="text" size="999" class="ShowDetailTextarea" id="ShowDetailDataDetail"></textarea>
 		</div>
@@ -19,7 +19,8 @@
 		<div class="ShowDetailInputBox">
 			時間：<input type="time" size="20" class="ShowDetailInput" id="ShowDetailDataTime" />
 		</div>
-		<div>
+		<hr color="#000000" size="3">
+		<div id="ShowDetailImgView">
 			<div>
 				文宣圖檔(240*240佳)：
 			</div>
@@ -28,13 +29,13 @@
 			</div>
 			更改：
 			<form action="php/upload_msg_img.php" method="post" id="ajaxForm">
-				<input type="file" id="MsgOneInput" name="img"><br>
+				<input type="file" id="MsgOneInput" name="img" onchange="isCheckingImage(this)"><br>
 				<input name="folderName" id="folderName" type="text" value="" style = "display:none">
 				<input name="folderId" id="folderId" type="text" value="" style = "display:none">
 			</form>
 		</div>
-
-		<div class="MsgPageView2">
+		<hr color="#000000" size="3">
+		<div class="MsgPageView2" id="ShowDetailLinkImgView">
 			<div class="MsgAddTitle">
 				圖片：
 			</div>
@@ -47,6 +48,7 @@
 		</div>
 		<div id="MsgImageView"></div>
 		<div id="ShowDeatilImageView"></div>
+		<hr color="#000000" size="3">
 		<div class="MsgPageView2">
 			<div class="MsgAddTitle">
 				附檔：
@@ -60,10 +62,10 @@
 		</div>
 		<div id="MsgLinkView"></div>
 		<div id="ShowDeatilLinkView"></div>
-		<br>
+		<hr color="#000000" size="3">
 		<div class="ShowDetailInputBox">
-			<input type="button" value="修改檔案" class="frameBt"/>
-			<input type="button" value="刪除檔案" class="frameBt"/>
+			<input type="button" value="修改訊息" class="frameBt" onclick="updateShowDetailDataMsg()"/>
+			<input type="button" value="刪除訊息" class="frameBt" onclick="deleteShowDetailDataMsg()"/>
 		</div>
 	</div>
 </div>

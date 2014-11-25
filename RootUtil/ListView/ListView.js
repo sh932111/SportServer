@@ -53,6 +53,7 @@ function setListView(title_items,date_items){
 			title_div.className = "title_css_td underLineStyle1";
 		}
 		box_div.addEventListener("click", function(e){
+			checkToUserData();
 			var index = this.id;
 			var get_index = parseInt(index) + parseInt(selectedIndex*8);
 			setPageUtilCallBack('#ManagementPageScrollView','RootUtil/ShowDetailData/ShowDetailData.html', function() {

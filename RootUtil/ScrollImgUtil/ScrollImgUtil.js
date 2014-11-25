@@ -8,11 +8,12 @@ function ScrollImgInit(img_array) {
 		
 		var ScrollImgImg = document.createElement("img");
 		ScrollImgImg.className = "ScrollImgImg";
-		ScrollImgImg.src = img_array[i];
+		ScrollImgImg.src = img_array[i].link_url;
 		var ScrollImgBt = document.createElement("div");
 		ScrollImgBt.className = "ScrollImgBt";
 		ScrollImgBt.id = i;
 		ScrollImgBt.addEventListener("click", function(e){
+			imgArray.push(img_array[this.id].link_text);
 			ScrollImgUtilView.removeChild(this.parentNode);
 		});
 

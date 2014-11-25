@@ -3,9 +3,6 @@ include "../database/database_util.php" ;
 include "../database/database_insert.php" ;
 
 header('Content-Type: text/html; charset=utf8');
-mysql_query("SET NAMES 'utf8'");
-mysql_query("SET CHARACTER_SET_CLIENT='utf8'");
-mysql_query("SET CHARACTER_SET_RESULTS='utf8'");
 
 $data_id = $_POST["data_id"];
 $title = $_POST["title"];

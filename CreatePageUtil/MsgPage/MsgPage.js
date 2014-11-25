@@ -1,6 +1,9 @@
 var MsgImageView = document.getElementById('MsgImageView');
 var MsgLinkView = document.getElementById('MsgLinkView');
 var getPost ;
+var MsgPostNum = 0;
+var MsgResponseNum = 0;
+
 function MsgInit(index) {
 	if (index != "學會活動") {
 		var MsgPageInputSelect = document.getElementById('MsgPageInputSelect');
@@ -12,10 +15,10 @@ function MsgInit(index) {
 	MsgPageInputSelectSpinner.loadSpinner(MsgPageInputSelect,EventClass,EventClass);
 	getPost = getPostId();
 
-	MsgSetUI();
+	MsgSetUI("Msg");
 }
 
-function MsgSetUI() {
+function MsgSetUI(folderName) {
 	
 	var MsgAddImgTitle = document.getElementById('MsgAddImgTitle');
 	MsgAddImgTitle.addEventListener("click", function(e){
@@ -27,7 +30,11 @@ function MsgSetUI() {
 		var input = document.createElement("input");
 		input.type = "file";
 		input.name = "img";
-		var foldername_input = addInputInformation("folderName","Msg");
+		input.addEventListener('change', function() {
+			isCheckingImage(this); 
+		});
+
+		var foldername_input = addInputInformation("folderName",folderName);
 		var id_input = addInputInformation("folderId",getPost);
 		form.appendChild(id_input);
 		form.appendChild(input);
@@ -54,7 +61,8 @@ function MsgSetUI() {
 		var input = document.createElement("input");
 		input.type = "file";
 		input.name = "file";
-		var foldername_input = addInputInformation("folderName","Msg");
+		
+		var foldername_input = addInputInformation("folderName",folderName);
 		var id_input = addInputInformation("folderId",getPost);
 		form.appendChild(input);
 		form.appendChild(foldername_input);
@@ -91,29 +99,72 @@ function MsgPost() {
 		m_class = "";
 	}
 	var post_data = "data_id="+getPost+"&title="+title+"&detail="+detail+"&date="+date
-	+"&time="+time+"&image="+image+"&link="+link+"&type="+SelectBarViewBoxClass.value+"&class="+m_class+"&create_time="+create_time;
+	+"&time="+time+"&image="+image+"&link="+link+"&type="+SelectBarViewBoxClass.value+
+	"&class="+m_class+"&create_time="+create_time;
 
 	callApi(post_data,addNewMsgApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
 			var img_array = MsgImageView.getElementsByTagName('form');
+			var link_array = MsgLinkView.getElementsByTagName('form');
+			MsgPostNum = img_array.length+link_array.length+1;
+			
 			for (var i = 0; i < img_array.length; i++) {
 				var form = img_array[i];
-				formUpload(form);
+				var get_input = form.getElementsByTagName('input')[1];
+				var filename = get_input.value;
+				var extend = filename.substring(filename.lastIndexOf(".") + 1);
+				if (extend == "") {
+					MsgPostNum = MsgPostNum - 1;
+				}
+				else {
+					MsgResponseNum ++;
+				}
+				formUploadCallBack(form,function(){
+					uploadFinishReload();
+				});
 			}
-			var link_array = MsgLinkView.getElementsByTagName('form');
 			for (var i = 0; i < link_array.length; i++) {
 				var form = link_array[i];
-				formUpload(form);
+				var get_input = form.getElementsByTagName('input')[1];
+				var filename = get_input.value;
+				var extend = filename.substring(filename.lastIndexOf(".") + 1);
+				if (extend == "") {
+					MsgPostNum = MsgPostNum - 1;
+				}
+				else {
+					MsgResponseNum ++;
+				}
+				formUploadCallBack(form,function(){
+					uploadFinishReload();
+				});
 			}
 
 			var folderName = document.getElementById('folderName');
 			folderName.value = "Msg";
 			var folderId = document.getElementById('folderId');
 			folderId.value = getPost;
-			formUpload(document.getElementById('ajaxForm'));
-			window.location.reload();
+
+			var get_input = document.getElementById('ajaxForm').getElementsByTagName('input')[0];
+			var filename = get_input.value;
+			var extend = filename.substring(filename.lastIndexOf(".") + 1);
+			if (extend == "") {
+				MsgPostNum = MsgPostNum - 1;
+			}
+			else {
+				MsgResponseNum ++;
+			}
+			formUploadCallBack(document.getElementById('ajaxForm'),function(){
+				uploadFinishReload();
+			});
+			//window.location.reload();
 		}
 	});
 }
-
+function uploadFinishReload(){
+	console.log(MsgResponseNum);
+	console.log(MsgPostNum);
+	if (MsgResponseNum == MsgPostNum) {
+		window.location.reload();
+	}
+}
