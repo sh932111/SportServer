@@ -145,14 +145,17 @@ function MsgPost() {
 			if (extend == "") {
 				MsgPostNum = MsgPostNum - 1;
 			}
-			formUploadCallBack(document.getElementById('ajaxForm'),function(){
-				uploadFinishReload();
-			});
+			else {
+				formUploadCallBack(document.getElementById('ajaxForm'),function(){
+					uploadFinishReload();
+				});
+			}
 			//window.location.reload();
 		}
 	});
 }
 function uploadFinishReload(){
+	MsgResponseNum ++;
 	console.log(MsgResponseNum);
 	console.log(MsgPostNum);
 	if (MsgResponseNum == MsgPostNum) {
