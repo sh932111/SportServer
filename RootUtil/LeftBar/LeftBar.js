@@ -35,6 +35,9 @@ function addFunction(obj) {
 			else if (go == "RootUtil/InformationPage/InformationPage.html") {
 				InformationPageInit();
 			}
+			else if (go == "RootUtil/LeafletPage/LeafletPage.html") {
+				LeafletInit();
+			}
 		});
     });
 }

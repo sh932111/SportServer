@@ -12,6 +12,7 @@ var getNewMsgApi = "php/managementPage/get_new_msg.php";
 var getPlanApi = "php/managementPage/get_plan.php";
 
 var getDataPath = "php/get_data_path.php";
+var getLeafletPath = "php/get_leaflet_path.php";
 var deleteAllMsg = "php/managementPage/delete_all_msg.php";
 var deleteLink = "php/managementPage/delete_link.php";
 var updateAllMsg = "php/managementPage/update_all_msg.php";
