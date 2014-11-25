@@ -22,7 +22,9 @@ function ScrollLinkInit(link_array) {
 
 		var a_link = document.createElement("a");
 		a_link.innerHTML = link_array[i].link_text;
-		a_link.href = link_array[i].link_url;
+		if (link_array[i].link_url) {
+			a_link.href = link_array[i].link_url;
+		}
 		a_link.target = "_blank";
 		ScrollLinkBt.appendChild(ScrollLinkUtilViewBt);
 		ScrollLinkUtilViewBox.appendChild(ScrollLinkBt);
@@ -51,7 +53,9 @@ function ScrollLinkInit2(link_array,callback) {
 
 		var a_link = document.createElement("a");
 		a_link.innerHTML = link_array[i].link_text;
-		a_link.href = link_array[i].link_url;
+		if (link_array[i].link_url) {
+			a_link.href = link_array[i].link_url;
+		}
 		a_link.target = "_blank";
 		ScrollLinkBt.appendChild(ScrollLinkUtilViewBt);
 		ScrollLinkUtilViewBox.appendChild(ScrollLinkBt);
