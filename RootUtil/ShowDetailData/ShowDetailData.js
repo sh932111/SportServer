@@ -144,6 +144,10 @@ function updateShowDetailDataMsg() {
 	if(confirm("確定更改資料？")) {
 		var post_folder = getShowDetailDataFolder(SelectBarViewBoxTitle.value);
 		var post_table = getShowDetailDataTableName(SelectBarViewBoxTitle.value);
+		checkIng(ShowDetailDataTitle.value,"標題");
+		checkIng(ShowDetailDataDate.value,"日期");
+		checkIng(ShowDetailDataTime.value,"時間");
+		
 		var post_data = "data_id="+getPost+"&folder="+post_folder+"&table_name="+post_table
 		+"&title="+ShowDetailDataTitle.value+"&detail="+ShowDetailDataDetail.value
 		+"&date="+ShowDetailDataDate.value+"&time="+ShowDetailDataTime.value

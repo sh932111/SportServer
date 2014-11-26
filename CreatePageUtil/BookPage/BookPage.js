@@ -49,7 +49,10 @@ function MsgPost() {
 	var date = document.getElementById('MsgDate').value;
 	var time = document.getElementById('MsgTime').value;
 	var type = SelectBarViewBoxClass.value;
-
+	checkIng(title,"標題");
+	checkIng(date,"日期");
+	checkIng(time,"時間");
+	
 	var post_data = "data_id="+get_post+"&title="+title+"&date="+date
 	+"&time="+time+"&link="+link+"&type="+type+"&create_time="+create_time;
 

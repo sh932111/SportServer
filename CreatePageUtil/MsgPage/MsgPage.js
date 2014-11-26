@@ -97,6 +97,9 @@ function MsgPost() {
 	var detail = document.getElementById('MsgDetail').value;
 	var date = document.getElementById('MsgDate').value;
 	var time = document.getElementById('MsgTime').value;
+	checkIng(title,"標題");
+	checkIng(date,"日期");
+	checkIng(time,"時間");
 	var m_class = document.getElementById('MsgPageInputSelect').value;
 	if (SelectBarViewBoxClass.value != "學會活動") {
 		m_class = "";

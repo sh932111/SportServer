@@ -40,9 +40,14 @@ function MsgPost() {
 	}
 	var create_time = getNowTime();
 	var title  = document.getElementById('MsgTitle').value;
+	
 	var detail = document.getElementById('MsgDetail').value;
 	var date = document.getElementById('MsgDate').value;
+	
 	var time = document.getElementById('MsgTime').value;
+	checkIng(title,"標題");
+	checkIng(date,"日期");
+	checkIng(time,"時間");
 	var post_data = "data_id="+get_post+"&title="+title+"&detail="+detail+"&date="+date
 	+"&time="+time+"&link="+link+"&create_time="+create_time;
 
