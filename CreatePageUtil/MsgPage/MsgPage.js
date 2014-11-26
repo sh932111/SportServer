@@ -111,6 +111,13 @@ function MsgPost() {
 			var img_array = MsgImageView.getElementsByTagName('form');
 			var link_array = MsgLinkView.getElementsByTagName('form');
 			MsgPostNum = img_array.length+link_array.length+1;
+
+			var get_input2 = document.getElementById('ajaxForm').getElementsByTagName('input')[0];
+			var filename1 = get_input2.value;
+			var extend1 = filename1.substring(filename1.lastIndexOf(".") + 1);
+			if (extend1 == "" && (img_array.length+link_array.length)==0) {
+				window.location.reload();
+			}
 			
 			for (var i = 0; i < img_array.length; i++) {
 				var form = img_array[i];
