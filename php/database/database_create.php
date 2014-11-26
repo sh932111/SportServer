@@ -69,7 +69,7 @@ function creatLinkTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`data_id` VARCHAR(20) NOT NULL PRIMARY KEY,
 		`title` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`link` VARCHAR(100) NOT NULL,
+		`link` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
 

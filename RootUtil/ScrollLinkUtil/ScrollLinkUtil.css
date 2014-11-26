@@ -13,4 +13,5 @@
 .ScrollLinkBt {
 	height:100%;
 	float: left;
+	cursor: pointer;
 }
