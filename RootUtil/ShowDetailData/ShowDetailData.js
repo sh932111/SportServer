@@ -7,7 +7,7 @@ var ShowDetailDataDetail = document.getElementById('ShowDetailDataDetail');
 var ShowDetailDataDate = document.getElementById('ShowDetailDataDate');
 var ShowDetailDataTime = document.getElementById('ShowDetailDataTime');
 var ShowDetailDataDetailBox = document.getElementById('ShowDetailDataDetailBox');
-			
+
 var fileArray = [];
 var imgArray = [];
 
@@ -28,32 +28,27 @@ function ShowDetailDataInit(get_index) {
 		var img_array = [];
 		var link_array = [];
 
-		for (var i = 0; i < res.folder_path.length; i++) {
-			var folder_path = res.folder_path[i];
-			if (i == 1) {
-				for (var x = 0; x < folder_path.length; x++) {
-					var link_text = folder_path[x].replace(replace_img_path, "");
-					var link_url = "php/"+folder_path[x];
-					var link_data = {
-						link_text : link_text,
-						link_url : link_url
-					};
-					
-					img_array.push(link_data);
-				}	
-			}
-			else if (i == 0) {
-				for (var x = 0; x < folder_path.length; x++) {
+		var folder_img_path = res.folder_path.img;
+		for (var x = 0; x < folder_img_path.length; x++) {
+			var link_text = folder_img_path[x].replace(replace_img_path, "");
+			var link_url = "php/"+folder_img_path[x];
+			var link_data = {
+				link_text : link_text,
+				link_url : link_url
+			};
 
-					var link_text = folder_path[x].replace(replace_file_path, "");
-					var link_url = "php/"+folder_path[x];
-					var link_data = {
-						link_text : link_text,
-						link_url : link_url
-					};
-					link_array.push(link_data);
-				}
-			}
+			img_array.push(link_data);
+		}	
+		var folder_path = res.folder_path.file;
+		for (var x = 0; x < folder_path.length; x++) {
+
+			var link_text = folder_path[x].replace(replace_file_path, "");
+			var link_url = "php/"+folder_path[x];
+			var link_data = {
+				link_text : link_text,
+				link_url : link_url
+			};
+			link_array.push(link_data);
 		}
 		
 		setPageUtilCallBack('#ShowDeatilImageView','RootUtil/ScrollImgUtil/ScrollImgUtil.html', function() {
@@ -74,15 +69,15 @@ function ShowDetailDataInit(get_index) {
 		}
 	});
 
-	ShowDetailDataTitle.value = get_data.title;
-	if (SelectBarViewBoxTitle.value == "出版資訊") {
-		ShowDetailDataDetailBox.style.display = "none";
-	}
-	else {
-		ShowDetailDataDetail.innerHTML = get_data.detail;
-	}
-	ShowDetailDataDate.value = get_data.date;
-	ShowDetailDataTime.value = get_data.time;
+ShowDetailDataTitle.value = get_data.title;
+if (SelectBarViewBoxTitle.value == "出版資訊") {
+	ShowDetailDataDetailBox.style.display = "none";
+}
+else {
+	ShowDetailDataDetail.innerHTML = get_data.detail;
+}
+ShowDetailDataDate.value = get_data.date;
+ShowDetailDataTime.value = get_data.time;
 }
 
 function getShowDetailDataFolder(value){
@@ -222,6 +217,6 @@ function updateShowDetailDataMsg() {
 
 			}
 		});
-	}
+}
 }
 
