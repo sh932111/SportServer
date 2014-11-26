@@ -9,8 +9,17 @@ mysql_query("SET CHARACTER_SET_RESULTS='utf8'");
 
 $year = $_POST["year"];
 $month = $_POST["month"];
-$post_date = $year."/".$month."/1";
-$post_date2 = $year."/".$month."/31";
+
+$post_date;
+$post_date2;
+if ($month == 0) {
+	$post_date = $year."/1/1";
+	$post_date2 = $year."/12/31";
+}
+else {
+	$post_date = $year."/".$month."/1";
+	$post_date2 = $year."/".$month."/31";
+}
 $link = initDatabase();
 
 mysql_query("SET NAMES 'utf8'",$link);
