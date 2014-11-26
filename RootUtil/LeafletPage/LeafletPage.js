@@ -6,6 +6,10 @@ function LeafletUpload() {
 	});
 }
 function LeafletInit() {
+	var input = document.getElementById('LeafletBoxInput');
+	input.addEventListener('change', function() {
+		isCheckingImage(this); 
+	});
 	var LeafletImg = document.getElementById('LeafletImg');
 	
 	callApi("",getLeafletPath,function(res){

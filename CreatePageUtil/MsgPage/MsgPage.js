@@ -83,7 +83,10 @@ function MsgSetUI(folderName) {
 function MsgPost() {
 	var image = 0;
 	var link = 0;
-	if (MsgImageView.getElementsByTagName('div').length > 0) {
+	var get_input = document.getElementById('ajaxForm').getElementsByTagName('input')[0];
+	var filename = get_input.value;
+	var extend = filename.substring(filename.lastIndexOf(".") + 1);
+	if (extend != "") {
 		image = 1;
 	}
 	if (MsgLinkView.getElementsByTagName('div').length > 0) {
