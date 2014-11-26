@@ -7,11 +7,11 @@ function creatDatabase($link,$db_name) {
 
 function creatUserTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
-		`name` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`username` VARCHAR(999) NOT NULL PRIMARY KEY,
-		`password` VARCHAR(999) NOT NULL,
-		`cellphone`  VARCHAR(999) NOT NULL,
-		`email`  VARCHAR(999) NOT NULL,
+		`name` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`username` VARCHAR(90) NOT NULL PRIMARY KEY,
+		`password` VARCHAR(90) NOT NULL,
+		`cellphone`  VARCHAR(90) NOT NULL,
+		`email`  VARCHAR(90) NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL,
 		`update_time`  VARCHAR(100) NOT NULL
 		);";
@@ -19,9 +19,9 @@ function creatUserTable($link,$table_name) {
 }
 function creatNewMsgTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
-		`data_id` VARCHAR(999) NOT NULL PRIMARY KEY,
-		`title` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`detail` VARCHAR(9990)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`data_id` VARCHAR(90) NOT NULL PRIMARY KEY,
+		`title` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`detail` VARCHAR(900)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
 		`image` INT NOT NULL,
@@ -37,9 +37,9 @@ function creatNewMsgTable($link,$table_name) {
 //活動訊息
 function creatMsgTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
-		`data_id` VARCHAR(999) NOT NULL PRIMARY KEY,
-		`title` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`detail` VARCHAR(9990)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`data_id` VARCHAR(90) NOT NULL PRIMARY KEY,
+		`title` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`detail` VARCHAR(900)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
 		`image` INT NOT NULL,
@@ -53,8 +53,8 @@ function creatMsgTable($link,$table_name) {
 //書刊
 function creatBookTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
-		`data_id` VARCHAR(999) NOT NULL PRIMARY KEY,
-		`title` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`data_id` VARCHAR(90) NOT NULL PRIMARY KEY,
+		`title` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
 		`link` INT NOT NULL,
@@ -67,8 +67,8 @@ function creatBookTable($link,$table_name) {
 //相關連結
 function creatLinkTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
-		`data_id` VARCHAR(999) NOT NULL PRIMARY KEY,
-		`title` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`data_id` VARCHAR(90) NOT NULL PRIMARY KEY,
+		`title` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`link` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
@@ -78,9 +78,9 @@ function creatLinkTable($link,$table_name) {
 //年度計畫
 function creatPlanTable($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
-		`data_id` VARCHAR(999) NOT NULL PRIMARY KEY,
-		`title` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`detail` VARCHAR(999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`data_id` VARCHAR(90) NOT NULL PRIMARY KEY,
+		`title` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`detail` VARCHAR(90)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`date` VARCHAR(100) NOT NULL,
 		`time` VARCHAR(100) NOT NULL,
 		`link` INT NOT NULL,
