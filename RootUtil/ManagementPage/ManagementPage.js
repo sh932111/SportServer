@@ -4,7 +4,7 @@ function ManagementPageInit() {
     });
 	setPageUtilCallBack('#ManagementPageScrollView','RootUtil/ListView/ListView.html', function() {
 
-		var post_data = "year="+getNowYear()+"&month="+(getNowMonth()+1)+"&type="+"學會活動";
+		var post_data = "year="+getNowYear()+"&month="+0+"&type="+"學會活動";
 		
 		callApi(post_data,getNewMsgApi,function(user_data){
 			if (user_data.result) {
