@@ -172,6 +172,6 @@ function uploadFinishReload(){
 	console.log(MsgResponseNum);
 	console.log(MsgPostNum);
 	if (MsgResponseNum == MsgPostNum) {
-		//window.location.reload();
+		window.location.reload();
 	}
 }
