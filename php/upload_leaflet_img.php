@@ -8,7 +8,7 @@ mkdir($target_path);
 
 $target_path2 = $target_path . basename( $_FILES['img']['name']);  
 
-if(move_uploaded_file($_FILES['img']['tmp_name'], iconv("UTF-8", "big5", $target_path2 ))) {  
+if(move_uploaded_file($_FILES['img']['tmp_name'], iconv("UTF-8", "big5//TRANSLIT//IGNORE", $target_path2 ))) {  
     echo "The file ".  basename( $_FILES['img']['name']). " has been uploaded";  
 }
 else {          

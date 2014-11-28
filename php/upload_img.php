@@ -13,7 +13,7 @@ mkdir($target_path2);
 
 $target_path3 = $target_path2 . basename( $_FILES['img']['name']);  
 
-if(move_uploaded_file($_FILES['img']['tmp_name'], iconv("UTF-8", "big5", $target_path3 ))) {  
+if(move_uploaded_file($_FILES['img']['tmp_name'], iconv("UTF-8", "big5//TRANSLIT//IGNORE", $target_path3 ))) {  
     echo "The file ".  basename( $_FILES['img']['name']). " has been uploaded";  
 }
 else {          
