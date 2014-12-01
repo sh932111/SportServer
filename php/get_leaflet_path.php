@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf8');
 $get_img = "data/Leaflet/*.*";
 $img_path = glob($get_img);
 

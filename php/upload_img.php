@@ -1,4 +1,5 @@
 <?php  
+header('Content-Type: text/html; charset=utf8');
 $mypath = $_POST["folderName"];
 $folderId = $_POST["folderId"];
 

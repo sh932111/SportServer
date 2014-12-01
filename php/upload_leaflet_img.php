@@ -1,4 +1,5 @@
 <?php  
+header('Content-Type: text/html; charset=utf8');
 $mypath = "Leaflet";
 
 $target_path  = "./data/".$mypath."/";//接收文件目录  

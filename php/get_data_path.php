@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf8');
 $folder = $_POST["folder"];
 $data_id = $_POST["data_id"];
 
