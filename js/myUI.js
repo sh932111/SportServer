@@ -30,6 +30,16 @@ function isCheckingImage(obj) {
 	}
 
 }
+
+function isCheckingName(obj) {
+	var v=$(obj).val();
+	if(v!=''){
+		var a = v.lastIndexOf("."); 
+		var str = v.substring(a + 1);
+		console.log(v);
+	}
+}
+
 function clearFileInput(ctrl) {
 	try {
 		ctrl.value = null;

@@ -32,6 +32,7 @@ function MsgSetUI(folderName) {
 		input.name = "img";
 		input.addEventListener('change', function() {
 			isCheckingImage(this); 
+			isCheckingName(this);
 		});
 
 		var foldername_input = addInputInformation("folderName",folderName);
