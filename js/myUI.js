@@ -38,3 +38,18 @@ function clearFileInput(ctrl) {
 		ctrl.parentNode.replaceChild(ctrl.cloneNode(true), ctrl);
 	}
 }
+
+function dialogShow() {
+	
+	var dialogView = document.getElementById("dialogView");
+	dialogView.className = "dialogShow";
+	setPageUtilCallBack('#dialogView','RootUtil/Loading/Loading.html',function(){
+
+	});
+}
+
+function dialogHidden() {    
+	$("#dialogView").empty();
+	var dialogView = document.getElementById("dialogView");
+	dialogView.className = "dialogHidden";
+}

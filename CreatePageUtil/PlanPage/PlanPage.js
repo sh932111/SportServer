@@ -50,7 +50,7 @@ function MsgPost() {
 	checkIng(time,"時間");
 	var post_data = "data_id="+get_post+"&title="+title+"&detail="+detail+"&date="+date
 	+"&time="+time+"&link="+link+"&create_time="+create_time;
-
+	dialogShow();
 	callApi(post_data,addPlanApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
@@ -72,6 +72,7 @@ function MsgPost() {
 				
 			}
 			if (MsgPostNum == 0) {
+				dialogHidden();
 				window.location.reload();
 			}
 		}
@@ -81,6 +82,7 @@ function MsgPost() {
 function uploadFinishReload(){
 	MsgResponseNum ++;
 	if (MsgResponseNum == MsgPostNum) {
+		dialogHidden();
 		window.location.reload();
 	}
 }

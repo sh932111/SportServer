@@ -5,10 +5,11 @@ function MsgPost() {
 	var title  = document.getElementById('MsgTitle').value;
 	checkIng(title,"標題");
 	var post_data = "data_id="+get_post+"&title="+title+"&link="+link+"&create_time="+create_time;
-
+	dialogShow();
 	callApi(post_data,addLinkApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
+			dialogHidden();
 			window.location.reload();
 		}
 	});

@@ -131,9 +131,11 @@ function deleteShowDetailDataMsg() {
 		var post_folder = getShowDetailDataFolder(SelectBarViewBoxTitle.value);
 		var post_table = getShowDetailDataTableName(SelectBarViewBoxTitle.value);
 		var post_data = "data_id="+getPost+"&folder="+post_folder+"&table_name="+post_table;
+		dialogShow();
 		callApi(post_data,deleteAllMsg,function(res){
 			alert(res.message);
 			if (res.result) {
+				dialogHidden();
 				window.location.reload();
 			}
 		});
@@ -151,7 +153,7 @@ function updateShowDetailDataMsg() {
 		+"&title="+ShowDetailDataTitle.value+"&detail="+ShowDetailDataDetail.value
 		+"&date="+ShowDetailDataDate.value+"&time="+ShowDetailDataTime.value
 		+"&file_array="+fileArray+"&img_array="+imgArray;
-		
+		dialogShow();
 		callApi(post_data,updateAllMsg,function(res){
 			console.log(res);
 			alert(res.message);
@@ -185,6 +187,7 @@ function updateShowDetailDataMsg() {
 				}
 
 				if (MsgPostNum == 0) {
+					dialogHidden();
 					window.location.reload();
 				}
 

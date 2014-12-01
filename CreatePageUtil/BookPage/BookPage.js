@@ -35,6 +35,7 @@ function BookPageInit() {
 function uploadFinishReload(){
 	MsgResponseNum ++;
 	if (MsgResponseNum == MsgPostNum) {
+		dialogHidden();
 		window.location.reload();
 	}
 }
@@ -55,7 +56,7 @@ function MsgPost() {
 	
 	var post_data = "data_id="+get_post+"&title="+title+"&date="+date
 	+"&time="+time+"&link="+link+"&type="+type+"&create_time="+create_time;
-
+	dialogShow();
 	callApi(post_data,addBookApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
@@ -80,6 +81,7 @@ function MsgPost() {
 			}
 			
 			if (MsgPostNum == 0) {
+				dialogHidden();
 				window.location.reload();
 			}
 			//window.location.reload();

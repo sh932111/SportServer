@@ -107,7 +107,7 @@ function MsgPost() {
 	var post_data = "data_id="+getPost+"&title="+title+"&detail="+detail+"&date="+date
 	+"&time="+time+"&image="+image+"&link="+link+"&type="+SelectBarViewBoxClass.value+
 	"&class="+m_class+"&create_time="+create_time;
-
+	dialogShow();
 	callApi(post_data,addNewMsgApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
@@ -119,6 +119,7 @@ function MsgPost() {
 			var filename1 = get_input2.value;
 			var extend1 = filename1.substring(filename1.lastIndexOf(".") + 1);
 			if (extend1 == "" && (img_array.length+link_array.length)==0) {
+				dialogHidden();
 				window.location.reload();
 			}
 			
@@ -172,6 +173,7 @@ function uploadFinishReload(){
 	console.log(MsgResponseNum);
 	console.log(MsgPostNum);
 	if (MsgResponseNum == MsgPostNum) {
+		dialogHidden();
 		window.location.reload();
 	}
 }

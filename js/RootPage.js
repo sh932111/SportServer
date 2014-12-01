@@ -36,7 +36,8 @@ function setUI() {
 		ManagementPageInit();
 	});
 	setPageUtilCallBack('#pgLeft','RootUtil/LeftBar/LeftBar.html', function() {
-    	leftBarInit(viewData);
+		leftBarInit(viewData);
 	});
 	setPageUtil('#pgFooter','PageUtil/Footer/Footer.html');
 }
+

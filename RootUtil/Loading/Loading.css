@@ -1,0 +1,14 @@
+.loadingBox {
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	margin-top: 150px;
+}
+.loadingBox img {
+	width: 100%;
+	height: 100%;
+}
+.loadingBoxh1 {
+	text-align: center;
+	color: red;
+}
