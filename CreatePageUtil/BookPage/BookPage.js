@@ -15,6 +15,10 @@ function BookPageInit() {
 		var input = document.createElement("input");
 		input.type = "file";
 		input.name = "file";
+		input.addEventListener('change', function() {
+			isCheckingName(this);
+		});
+		
 		var foldername_input = addInputInformation("folderName","Book");
 		var id_input = addInputInformation("folderId",get_post);
 		form.appendChild(input);

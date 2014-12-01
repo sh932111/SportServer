@@ -62,7 +62,9 @@ function MsgSetUI(folderName) {
 		var input = document.createElement("input");
 		input.type = "file";
 		input.name = "file";
-		
+		input.addEventListener('change', function() {
+			isCheckingName(this);
+		});
 		var foldername_input = addInputInformation("folderName",folderName);
 		var id_input = addInputInformation("folderId",getPost);
 		form.appendChild(input);
@@ -177,4 +179,8 @@ function uploadFinishReload(){
 		dialogHidden();
 		window.location.reload();
 	}
+}
+function isCheckingData(obj) {
+	isCheckingImage(obj); 
+	isCheckingName(obj);
 }

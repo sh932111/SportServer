@@ -22,7 +22,6 @@ function ShowDetailDataInit(get_index) {
 
 	var post_data = "folder="+post_folder+"&data_id="+getPost;
 	callApi(post_data,getDataPath,function(res){
-		console.log(res);
 		var replace_file_path = res.replace_file_path;
 		var replace_img_path = res.replace_img_path;
 		
@@ -238,5 +237,9 @@ function updateShowDetailDataMsg() {
 			}
 		});
 }
+}
+function isCheckingData(obj) {
+	isCheckingImage(obj); 
+	isCheckingName(obj);
 }
 

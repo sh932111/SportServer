@@ -11,6 +11,7 @@ function LeafletInit() {
 	var input = document.getElementById('LeafletBoxInput');
 	input.addEventListener('change', function() {
 		isCheckingImage(this); 
+		isCheckingName(this);
 	});
 	var LeafletImg = document.getElementById('LeafletImg');
 	
