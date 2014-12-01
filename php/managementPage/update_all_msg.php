@@ -33,19 +33,23 @@ if (mysql_select_db('SportData')) {
 		unlink($path."/file/".$file_array[$i]);
 	}
 	$file_path = $path."/file/*.*";
-	$file_paths = glob($file_path);
-	if (count($file_paths) == 0) {
-		$dir = $path."/file/"
-		rm_folder_recursively($dir);
+	if (file_exists($file_path)) {
+		$file_paths = glob($file_path);
+		if (count($file_paths) == 0) {
+			$dir = $path."/file/"
+			rm_folder_recursively($dir);
+		}
 	}
 	for ($i = 0; $i < count($img_array); $i++) { 
 		unlink($path."/img/".$img_array[$i]);
 	}
 	$image_path = $path."/img/*.*";
-	$image_paths = glob($image_path);
-	if (count($image_paths) == 0) {
-		$dir = $path."/img/"
-		rm_folder_recursively($dir);
+	if (file_exists($image_path)) {	
+		$image_paths = glob($image_path);
+		if (count($image_paths) == 0) {
+			$dir = $path."/img/"
+			rm_folder_recursively($dir);
+		}
 	}
 
 	$check = false;
