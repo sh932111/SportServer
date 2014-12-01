@@ -30,25 +30,24 @@ mysql_query("SET NAMES 'utf8'",$link);
 if (mysql_select_db('SportData')) {
 	
 	for ($i = 0; $i < count($file_array); $i++) { 
-		unlink($path."/file/".$file_array[$i]);
+		unlink($path."file/".$file_array[$i]);
 	}
-	$dir1 = $path."/file/";
+	$dir1 = $path."file/";
 	if (file_exists($file_path)) {
-		$file_path = $path."/file/*.*";
+		$file_path = $path."file/*.*";
 		$file_paths = glob($file_path);
 		if (count($file_paths) == 0) {
 			rm_folder_recursively($dir1);
 		}
 	}
 	for ($i = 0; $i < count($img_array); $i++) { 
-		unlink($path."/img/".$img_array[$i]);
+		unlink($path."img/".$img_array[$i]);
 	}
-	$dir2 = $path."/img/";
-	if (file_exists($image_path)) {	
-		$image_path = $path."/img/*.*";
+	$dir2 = $path."img/";
+	if (file_exists($dir2)) {	
+		$image_path = $path."img/*.*";
 		$image_paths = glob($image_path);
 		if (count($image_paths) == 0) {
-			$dir = $path."/img/"
 			rm_folder_recursively($dir2);
 		}
 	}
