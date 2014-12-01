@@ -13,7 +13,7 @@ mkdir($target_path);
 $target_path2  = $target_path."file"."/";//接收文件目录  
 mkdir($target_path2);
 
-$target_path3 = $target_path2 . iconv( "UTF-8" , "big5" , basename( $_FILES['file']['name']) );  
+$target_path3 = $target_path2 . basename( $_FILES['file']['name']);  
 
 if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path3)) {  
     echo "The file ".  basename( $_FILES['file']['name']). " has been uploaded";  
