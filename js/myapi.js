@@ -16,6 +16,7 @@ var getLeafletPath = "php/get_leaflet_path.php";
 var deleteAllMsg = "php/managementPage/delete_all_msg.php";
 var deleteLink = "php/managementPage/delete_link.php";
 var updateAllMsg = "php/managementPage/update_all_msg.php";
+var updateTwoMsg = "php/managementPage/update_two_msg.php";
 
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();

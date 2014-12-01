@@ -13,6 +13,13 @@ $date = $_POST["date"];
 $time = $_POST["time"];
 $file_array = explode(',', $_POST["file_array"]);
 $img_array = explode(',', $_POST["img_array"]);
+$image = $_POST["image"];
+
+$get_path = "../data/Msg/".$data_id."/*.*";
+$paths = glob($get_path);
+if (count($paths) > 0 && $image == 0) {
+	unlink($paths[0]);
+}
 
 $path = "../data/".$folder."/".$data_id."/";
 
@@ -33,6 +40,11 @@ if (mysql_select_db('SportData')) {
 
 	if ($folder == "Book") {
 		$check = updateBookData($link,$table_name,$data_id,$title,$date,$time);
+	}
+	else if ($folder == "Msg" ) {
+		$check = updateMsgData($link,$table_name,$data_id,$title,$detail,$date,$time);
+		updateMsgImage($link,"newMsgTable",$data_id,$image);
+		updateMsgImage($link,"msgTable",$data_id,$image);
 	}
 	else {
 		$check = updateMsgData($link,$table_name,$data_id,$title,$detail,$date,$time);

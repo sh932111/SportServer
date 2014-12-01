@@ -11,6 +11,7 @@ var ShowDetailDataDetailBox = document.getElementById('ShowDetailDataDetailBox')
 var fileArray = [];
 var imgArray = [];
 
+var getImage = 0;
 function ShowDetailDataInit(get_index) {
 	
 	MsgSetUI(getShowDetailDataFolder(SelectBarViewBoxTitle.value));
@@ -66,8 +67,10 @@ function ShowDetailDataInit(get_index) {
 			var ShowDetailImg = document.getElementById('ShowDetailImg');
 			var ShowDetailDataDeleteBt = document.getElementById('ShowDetailDataDeleteBt');
 			if (res.img_path.length > 0) {
+				getImage = 1;
 				ShowDetailImg.src = "php/"+res.img_path[0];
 				ShowDetailDataDeleteBt.addEventListener("click", function(e){
+					getImage = 0;
 					ShowDetailImg.src = "img/noneImg.jpg";
 					ShowDetailDataDeleteBt.style.display = "none";
 				});
@@ -158,10 +161,10 @@ function updateShowDetailDataMsg() {
 		var post_data = "data_id="+getPost+"&folder="+post_folder+"&table_name="+post_table
 		+"&title="+ShowDetailDataTitle.value+"&detail="+ShowDetailDataDetail.value
 		+"&date="+ShowDetailDataDate.value+"&time="+ShowDetailDataTime.value
-		+"&file_array="+fileArray+"&img_array="+imgArray;
+		+"&file_array="+fileArray+"&img_array="+imgArray+"&image="+getImage;
 		dialogShow();
 		callApi(post_data,updateAllMsg,function(res){
-			console.log(res);
+			
 			alert(res.message);
 			if (res.result) {
 				var img_array = MsgImageView.getElementsByTagName('form');
@@ -187,7 +190,11 @@ function updateShowDetailDataMsg() {
 					}
 					else {
 						formUploadCallBack(document.getElementById('ajaxForm'),function(){
-							uploadFinishReload();
+							getImage = 1;
+							var post_data2 = "data_id="+getPost+"&image="+getImage;;
+							callApi(post_data2,updateTwoMsg,function(res){
+								uploadFinishReload();
+							});
 						});
 					}
 				}

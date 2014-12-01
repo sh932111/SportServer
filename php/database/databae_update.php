@@ -35,4 +35,10 @@ function updateBookData($link,$table_name,$data_id,$title,$date,$time) {
 		WHERE `data_id` = '$data_id';");
 	return mysql_query($action,$link);
 }
+function updateMsgImage($link,$table_name,$data_id,$image) {
+	$action = sprintf("UPDATE `$table_name` SET 
+		`image` = '$image'
+		WHERE `data_id` = '$data_id';");
+	return mysql_query($action,$link);
+}
 ?>
