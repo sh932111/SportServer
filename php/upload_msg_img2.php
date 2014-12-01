@@ -3,7 +3,7 @@
 $mypath = $_POST["folderName"];
 $folderId = $_POST["folderId"];
 
-$get_path = "../data/Msg/".$folderId."/*.*";
+$get_path = "./data/Msg/".$folderId."/*.*";
 $paths = glob($get_path);
 if (count($paths) > 0) {
 	$path = $paths[0];
