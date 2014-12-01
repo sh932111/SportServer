@@ -33,7 +33,7 @@ if (mysql_select_db('SportData')) {
 		unlink($path."file/".$file_array[$i]);
 	}
 	$dir1 = $path."file/";
-	if (file_exists($file_path)) {
+	if (file_exists($dir1)) {
 		$file_path = $path."file/*.*";
 		$file_paths = glob($file_path);
 		if (count($file_paths) == 0) {
