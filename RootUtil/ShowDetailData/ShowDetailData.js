@@ -64,11 +64,17 @@ function ShowDetailDataInit(get_index) {
 		});
 		if (SelectBarViewBoxTitle.value == "最新消息" || SelectBarViewBoxTitle.value == "活動訊息" ) {
 			var ShowDetailImg = document.getElementById('ShowDetailImg');
+			var ShowDetailDataDeleteBt = document.getElementById('ShowDetailDataDeleteBt');
 			if (res.img_path.length > 0) {
 				ShowDetailImg.src = "php/"+res.img_path[0];
+				ShowDetailDataDeleteBt.addEventListener("click", function(e){
+					ShowDetailImg.src = "img/noneImg.jpg";
+					ShowDetailDataDeleteBt.style.display = "none";
+				});
 			}
 			else {
 				ShowDetailImg.src = "img/noneImg.jpg";
+				ShowDetailDataDeleteBt.style.display = "none";
 			}
 		}
 	});
