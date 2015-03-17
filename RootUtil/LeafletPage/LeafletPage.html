@@ -28,5 +28,17 @@
 		<form action="php/upload_head_img.php" method="post" id="HeadForm2" style="display:none">
 			<input type="file" name="img">
 		</form><br>
+		<h4>請選擇圖片(1000*300為佳)</h4>
+		<div class="footerImgBox">
+			<img src="" id="footerImg">
+		</div>
+		<form action="php/upload_footer_img.php" method="post" id="footerForm">
+			<input type="file" name="img" id="footerBoxInput">
+		</form><br>
+		<input type="submit" value="上傳" class="LeafletBt" onClick="footerUpload()"/>
+		<input type="submit" value="刪除" class="LeafletBt" onClick="footerDelete()"/>
+		<form action="php/upload_footer_img.php" method="post" id="footerForm2" style="display:none">
+			<input type="file" name="img">
+		</form><br>
 	</div>
 </div>

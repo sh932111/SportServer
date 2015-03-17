@@ -1,7 +1,7 @@
 .LeafletBox {
 	margin: 5%;
 	width: 90%;
-	height: 500px;
+	height: 550px;
 	overflow-y: auto; 
 	overflow-x: hidden; 
 	white-space: nowrap;
@@ -21,4 +21,10 @@
 }
 #HeadImg {
 	height: 160px;
+}
+.footerImgBox {
+	height: 90px;
+}
+#footerImg {
+	height: 90px;
 }

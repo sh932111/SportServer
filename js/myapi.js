@@ -14,6 +14,7 @@ var getPlanApi = "php/managementPage/get_plan.php";
 var getDataPath = "php/get_data_path.php";
 var getLeafletPath = "php/get_leaflet_path.php";
 var getHeadPath = "php/get_head_path.php";
+var getFooterPath = "php/get_footer_path.php";
 var deleteAllMsg = "php/managementPage/delete_all_msg.php";
 var deleteLink = "php/managementPage/delete_link.php";
 var updateAllMsg = "php/managementPage/update_all_msg.php";
