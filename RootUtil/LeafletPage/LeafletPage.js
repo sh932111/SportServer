@@ -10,8 +10,12 @@ function LeafletUpload() {
 
 function LeafletDelete() {
 	dialogShow();
-	
-	
+	var LeafletForm = document.getElementById('LeafletForm2');
+	formUploadCallBack(LeafletForm,function(){
+		dialogHidden();
+		alert("刪除成功！");
+		window.location.reload();
+	});
 }
 
 function LeafletInit() {
