@@ -7,6 +7,13 @@ function LeafletUpload() {
 		window.location.reload();
 	});
 }
+
+function LeafletDelete() {
+	dialogShow();
+	
+	
+}
+
 function LeafletInit() {
 	var input = document.getElementById('LeafletBoxInput');
 	input.addEventListener('change', function() {
