@@ -18,13 +18,41 @@ function LeafletDelete() {
 	});
 }
 
+function HeadUpload() {
+	dialogShow();
+	var LeafletForm = document.getElementById('HeadForm');
+	formUploadCallBack(LeafletForm,function(){
+		dialogHidden();
+		alert("上傳成功！");
+		window.location.reload();
+	});
+}
+
+function HeadDelete() {
+	dialogShow();
+	var LeafletForm = document.getElementById('HeadForm2');
+	formUploadCallBack(LeafletForm,function(){
+		dialogHidden();
+		alert("刪除成功！");
+		window.location.reload();
+	});
+}
+
 function LeafletInit() {
 	var input = document.getElementById('LeafletBoxInput');
 	input.addEventListener('change', function() {
 		isCheckingImage(this); 
 		isCheckingName(this);
 	});
+
+	var input2 = document.getElementById('HeadBoxInput');
+	input2.addEventListener('change', function() {
+		isCheckingImage(this); 
+		isCheckingName(this);
+	});
+
 	var LeafletImg = document.getElementById('LeafletImg');
+	var HeadImg = document.getElementById('HeadImg');
 	
 	callApi("",getLeafletPath,function(res){
 		if (res.img_path.length > 0) {
@@ -32,6 +60,15 @@ function LeafletInit() {
 		}
 		else {
 			LeafletImg.src = "img/noneImg.jpg";
+		}
+	});
+	
+	callApi("",getHeadPath,function(res){
+		if (res.img_path.length > 0) {
+			HeadImg.src = "php/"+res.img_path[0];
+		}
+		else {
+			HeadImg.src = "img/noneImg.jpg";
 		}
 	});
 }
